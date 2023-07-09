@@ -1,3 +1,5 @@
+[![Run Selenium On GitHub Action](https://github.com/Nikitinatt/autotest/actions/workflows/Selenium-Action_Template.yaml/badge.svg)](https://github.com/Nikitinatt/autotest/actions/workflows/Selenium-Action_Template.yaml)
+
 # Итоговое тестовое задание курса по тестированию
 
 Задание: Необходимо написать 1 скрипт (тест) к сайту https://www.saucedemo.com/
