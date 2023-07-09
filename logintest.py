@@ -11,8 +11,7 @@ PASSWORD = "secret_sauce"
 
 def get_driver():
     chrome_options = Options()
-    chrome_options.add_argument("--window-size=1920,800")
-    chrome_options.add_argument("--headless")
+
     driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=chrome_options)
 
     return driver
@@ -36,7 +35,7 @@ def set_value(driver, id, value):
     element.send_keys(value)
 
 
-def login(login, password):
+def login(driver, login, password):
     set_value(driver=driver, id="user-name", value=login)
     set_value(driver=driver, id="password", value=password)
     click_element(driver=driver, id="login-button")
@@ -44,6 +43,9 @@ def login(login, password):
 
 driver = get_driver()
 open_url(driver=driver, url=URL)
-login(login=LOGIN, password=PASSWORD)
+login(driver=driver, login=LOGIN, password=PASSWORD)
+click_element(driver, id="add-to-cart-sauce-labs-backpack")
+click_element(driver, id="shopping_cart_container")
+click_element(driver, id="checkout")
 
 driver.quit()
